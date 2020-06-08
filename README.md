@@ -1,2 +1,2 @@
 # fullstack
-common application for node js and react js
+Common application for node js and react js
