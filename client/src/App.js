@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-import Table from "./components/Table.js";
+import Table from "./components/table.js";
+import Sidebar from "./components/sidebar.js";
+
 
 import './styles/app.css';
 
@@ -24,7 +26,10 @@ class App extends Component {
 
   render() {    
     return (
+      <div class="h-screen flex overflow-hidden bg-gray-100">
+      <Sidebar/>
       <Table users={this.state.users} />
+      </div>
     );
   }
 }
