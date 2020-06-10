@@ -71,8 +71,8 @@ const Table = (props) => {
           </div>
         </div>
 
-        <Footer/>
-        </main>
+        <Footer />
+      </main>
     </div>
 
   );
