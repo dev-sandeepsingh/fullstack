@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import firebase from "firebase";
 const Sidebar = () => {
     return (
         <div class="hidden md:flex md:flex-shrink-0">
@@ -58,16 +59,17 @@ const Sidebar = () => {
             </Link>
                         </a>
                     </nav>
+                    <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
                 </div>
                 <div class="flex-shrink-0 flex bg-gray-700 p-4">
                     <a href="#" class="flex-shrink-0 w-full group block">
                         <div class="flex items-center">
                             <div>
-                                <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                                <img class="inline-block h-9 w-9 rounded-full" src={firebase.auth().currentUser.photoURL} alt="" />
                             </div>
                             <div class="ml-3">
                                 <p class="text-sm leading-5 font-medium text-white">
-                                    Tom Cook
+                                {firebase.auth().currentUser.displayName}
               </p>
                                 <p class="text-xs leading-4 font-medium text-gray-300 group-hover:text-gray-200 transition ease-in-out duration-150">
                                     View profile
